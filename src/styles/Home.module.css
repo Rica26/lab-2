@@ -1,0 +1,140 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  position: relative;
+}
+
+.mainContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../public/background-2.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.mainContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.hell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../public/hell.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.hell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.headerMenuContainer {
+  display: flex;
+  gap: 6px;
+}
+
+.headerMenuContainer span {
+  cursor: pointer;
+}
+
+.inventory {
+  display: flex;
+  gap: 4px;
+}
+
+.inventoryItem {
+  width: 45px;
+  height: 45px;
+  background: red;
+}
+
+.spells {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.spell {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.spells button {
+  display: flex;
+  gap: 3px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.questBoardContainer {
+  height: 200px;
+  width: 250px;
+  background: red;
+}
+
+.mapContainer {
+  height: 200px;
+  width: 250px;
+  background: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.mapBlock {
+  width: 48%;
+  height: 48%;
+  background-color: red;
+}
