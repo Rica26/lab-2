@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../../public/background-2.jpg");
+  background-image: url("../../public/forest.jpg");
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -54,6 +54,72 @@
 }
 
 .hell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.ice {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  position: relative;
+}
+
+.ice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../public/ice.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.ice::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.desert {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  position: relative;
+}
+
+.desert::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../public/desert.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.desert::after {
   content: "";
   position: absolute;
   top: 0;

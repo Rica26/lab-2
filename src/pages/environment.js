@@ -3,6 +3,7 @@ import { useState } from "react";
 import Spells from "./spell";
 import Forest from "@/environments/forest";
 import Hell from "@/environments/hell";
+import Ice from "@/environments/ice";
 
 const Environment = () => {
   const [environment, setEnvironment] = useState("forest");
@@ -10,7 +11,7 @@ const Environment = () => {
   return (
     <div
       className={`${
-        environment === "forest" ? styles.mainContainer : environment === "hell" ? styles.hell : styles.mainContainer
+        environment === "forest" ? styles.mainContainer : environment === "hell" ? styles.hell : environment === "ice" ? styles.ice : environment === "desert" ? styles.desert : styles.mainContainer
       }`}
     >
       {environment === "forest" && <Forest />}
@@ -51,17 +52,17 @@ const QuestBoard = () => {
 const Map = ({ setEnvironment }) => {
   return (
     <div className={`${styles.mapContainer}`}>
-      <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("hell")}>
-        hell
-      </div>
       <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("forest")}>
         forest
+      </div>
+      <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("hell")}>
+        hell
       </div>
       <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("ice")}>
         ice
       </div>
-      <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("forest")}>
-        other
+      <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("desert")}>
+      desert
       </div>
     </div>
   );
