@@ -144,7 +144,10 @@
 
 .headerMenuContainer span {
   cursor: pointer;
+  z-index: 1000;
 }
+
+
 
 .inventory {
   display: flex;
@@ -154,7 +157,8 @@
 .inventoryItem {
   width: 45px;
   height: 45px;
-  background: red;
+  background: burlywood;
+  z-index: 1000;
 }
 
 .spells {
@@ -162,6 +166,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 4px;
+  z-index: 1000;
 }
 
 .spell {
@@ -170,6 +175,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 1000;
 }
 
 .spells button {
@@ -186,7 +192,10 @@
 .questBoardContainer {
   height: 200px;
   width: 250px;
-  background: red;
+  background: transparent;
+  background-image: url("../../public/board.png");
+  background-size: cover;
+  z-index: 1000;
 }
 
 .mapContainer {
@@ -199,8 +208,36 @@
   align-content: space-between;
 }
 
-.mapBlock {
+
+.forestMap{
   width: 48%;
   height: 48%;
-  background-color: red;
+  background-image: url("../../public/forest.png");
+  background-size: cover;
+  background-color: greenyellow;
+  z-index: 1000;
+}
+.hellMap{
+  width: 48%;
+  height: 48%;
+  background-image: url("../../public/hell.png");
+  background-size: cover;
+  background-color: orange;
+  z-index: 1000;
+}
+.iceMap{
+  width: 48%;
+  height: 48%;
+  background-image: url("../../public/arctic.png");
+  background-size: cover;
+  background-color: gainsboro;
+  z-index: 1000;
+}
+.desertMap{
+  width: 48%;
+  height: 48%;
+  background-image: url("../../public/desert.png");
+  background-size: cover;
+  background-color: aqua;
+  z-index: 1000;
 }

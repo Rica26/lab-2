@@ -4,7 +4,7 @@ import { GiFireSpellCast as FireSpell } from "react-icons/gi";
 import { GiIceSpellCast as IceSpell } from "react-icons/gi";
 import styles from "@/styles/Home.module.css";
 
-const Spells = () => {
+const Spells = ({ onEnemyDestroy }) => {
   const [isFlickering, setFlickering] = useState(false);
   const [spell, setSpell] = useState("yellow");
 
@@ -12,6 +12,7 @@ const Spells = () => {
     if (spell === "yellow") {
       setFlickering(true);
       setSpell("yellow");
+      onEnemyDestroy();
       setTimeout(() => {
         setFlickering(false);
       }, 100);
@@ -19,6 +20,7 @@ const Spells = () => {
     if (spell === "red") {
       setFlickering(true);
       setSpell("red");
+      onEnemyDestroy();
       setTimeout(() => {
         setFlickering(false);
       }, 100);
@@ -26,52 +28,41 @@ const Spells = () => {
     if (spell === "blue") {
       setFlickering(true);
       setSpell("#76CBFF");
+      onEnemyDestroy();
       setTimeout(() => {
         setFlickering(false);
       }, 100);
     }
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === "z") {
-      spellHandler("yellow");
-    }
-    if (event.key === "x") {
-      spellHandler("red");
-    }
-    if (event.key === "c") {
-      spellHandler("blue");
-    }
-  };
+  // const handleKeyDown = (event) => {
+  //   if (event.key === "z") {
+  //     spellHandler("yellow");
+  //     onEnemyDestroy();
+  //   }
+  //   if (event.key === "x") {
+  //     spellHandler("red");
+  //     onEnemyDestroy();
+  //   }
+  //   if (event.key === "c") {
+  //     spellHandler("blue");
+  //     onEnemyDestroy();
+  //   }
+  // };
 
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("keydown", handleKeyDown);
+  //   return () => {
+  //     document.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, []);
 
   return (
     <div className={`${styles.spells}`}>
       <div>Spell:</div>
-      <BoltSpell
-        color="yellow"
-        size={42}
-        cursor="pointer"
-        onClick={() => spellHandler("yellow")}
-      />
-      <FireSpell
-        color="red"
-        size={42}
-        cursor="pointer"
-        onClick={() => spellHandler("red")}
-      />
-      <IceSpell
-        color="#76CBFF"
-        size={42}
-        cursor="pointer"
-        onClick={() => spellHandler("blue")}
-      />
+      <BoltSpell color="yellow" size={42} cursor="pointer" onClick={() => spellHandler("yellow")} />
+      <FireSpell color="red" size={42} cursor="pointer" onClick={() => spellHandler("red")} />
+      <IceSpell color="#76CBFF" size={42} cursor="pointer" onClick={() => spellHandler("blue")} />
       <div
         className={`${styles.spell}`}
         style={{

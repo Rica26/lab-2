@@ -1,33 +1,56 @@
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
 import Spells from "./spell";
-import Forest from "@/environments/forest";
-import Hell from "@/environments/hell";
-import Ice from "@/environments/ice";
+import Inventory from "./inventory";
+import Enemy from "./enemy";
+import Map from "@/components/map";
+import Item from "./item";
 
 const Environment = () => {
   const [environment, setEnvironment] = useState("forest");
+  const [isMonster, setIsMonster] = useState(false);
+  const [isEnemyDestroyed, setEnemyDestroyed] = useState({
+    isMonsterDestroyed: false,
+    isSkullDestroyed: false,
+  });
+
+  const setEnemyDestroyedHandler = () => {
+    if (isEnemyDestroyed.isSkullDestroyed === false && environment === "hell") {
+      setEnemyDestroyed({ ...isEnemyDestroyed, isSkullDestroyed: true });
+    }
+    if (isEnemyDestroyed.isMonsterDestroyed === false && environment === "ice") {
+      setEnemyDestroyed({ ...isEnemyDestroyed, isMonsterDestroyed: true });
+    }
+  };
 
   return (
     <div
       className={`${
-        environment === "forest" ? styles.mainContainer : environment === "hell" ? styles.hell : environment === "ice" ? styles.ice : environment === "desert" ? styles.desert : styles.mainContainer
+        environment === "forest"
+          ? styles.mainContainer
+          : environment === "hell"
+          ? styles.hell
+          : environment === "ice"
+          ? styles.ice
+          : environment === "desert"
+          ? styles.desert
+          : styles.mainContainer
       }`}
     >
-      {environment === "forest" && <Forest />}
-      {environment === "hell" && <Hell />}
-      {environment==="ice" && <Ice/>}
+      {environment !== "forest" && environment !== "desert" && (
+        <Enemy isMonster={isMonster} isDestroyed={isEnemyDestroyed} />
+      )}
+      {environment === "desert" && <Item />}
       <div className={`${styles.header}`}>
         <Inventory />
         <div className={`${styles.headerMenuContainer}`}>
           <span>STATS</span>
-          <span>JORNAL</span>
         </div>
-        <Spells />
+        <Spells onEnemyDestroy={setEnemyDestroyedHandler} environment={environment} setEnvironment={setEnvironment} />
       </div>
       <div className={`${styles.footer}`}>
         <QuestBoard />
-        <Map setEnvironment={setEnvironment} />
+        <Map setEnvironment={setEnvironment} setIsMonster={setIsMonster} setEnemyDestroyed={setEnemyDestroyed} />
       </div>
     </div>
   );
@@ -35,35 +58,28 @@ const Environment = () => {
 
 export default Environment;
 
-const Inventory = () => {
-  return (
-    <div className={`${styles.inventory}`}>
-      <div className={`${styles.inventoryItem}`}></div>
-      <div className={`${styles.inventoryItem}`}></div>
-      <div className={`${styles.inventoryItem}`}></div>
-    </div>
-  );
-};
-
 const QuestBoard = () => {
-  return <div className={styles.questBoardContainer}></div>;
-};
-
-const Map = ({ setEnvironment }) => {
   return (
-    <div className={`${styles.mapContainer}`}>
-      <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("forest")}>
-        forest
-      </div>
-      <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("hell")}>
-        hell
-      </div>
-      <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("ice")}>
-        ice
-      </div>
-      <div className={`${styles.mapBlock}`} onClick={() => setEnvironment("desert")}>
-      desert
-      </div>
+    <div className={styles.questBoardContainer}>
+      <span style={{ position: "absolute", left: 80, top: 550, fontSize: 15, textAlign: "center", color: "black" }}>
+        QUEST BOARD
+      </span>
+      <span
+        style={{
+          position: "absolute",
+          left: 30,
+          top: 600,
+          fontSize: 13,
+          textAlign: "center",
+          color: "black",
+          lineHeight: "2.5",
+          fontWeight: "bold",
+        }}
+      >
+        1-Visita o Hell e derrota a caveira
+        <br />
+        2-Visita o Ice e derrota o monstro
+      </span>
     </div>
   );
 };
