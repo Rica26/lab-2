@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../../public/forest.jpg");
+  background-image: url("../../public/assets/forest.jpg");
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -46,7 +46,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../../public/hell.jpg");
+  background-image: url("../../public/assets/hell.jpg");
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -79,7 +79,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../../public/ice.jpg");
+  background-image: url("../../public/assets/ice.jpg");
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -112,7 +112,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../../public/desert.jpg");
+  background-image: url("../../public/assets/desert.jpg");
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -139,6 +139,8 @@
 
 .headerMenuContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 6px;
 }
 
@@ -146,8 +148,6 @@
   cursor: pointer;
   z-index: 1000;
 }
-
-
 
 .inventory {
   display: flex;
@@ -158,7 +158,16 @@
   width: 45px;
   height: 45px;
   background: burlywood;
+  cursor: pointer;
   z-index: 1000;
+}
+
+.statsMenu{
+  width: 150px;
+  height: 150px;
+  background: black;
+  position: absolute;
+  top: 48px;
 }
 
 .spells {
@@ -193,7 +202,7 @@
   height: 200px;
   width: 250px;
   background: transparent;
-  background-image: url("../../public/board.png");
+  background-image: url("../../public/assets/board.png");
   background-size: cover;
   z-index: 1000;
 }
@@ -212,7 +221,7 @@
 .forestMap{
   width: 48%;
   height: 48%;
-  background-image: url("../../public/forest.png");
+  background-image: url("../../public/assets/forest.png");
   background-size: cover;
   background-color: greenyellow;
   z-index: 1000;
@@ -220,7 +229,7 @@
 .hellMap{
   width: 48%;
   height: 48%;
-  background-image: url("../../public/hell.png");
+  background-image: url("../../public/assets/hell.png");
   background-size: cover;
   background-color: orange;
   z-index: 1000;
@@ -228,7 +237,7 @@
 .iceMap{
   width: 48%;
   height: 48%;
-  background-image: url("../../public/arctic.png");
+  background-image: url("../../public/assets/arctic.png");
   background-size: cover;
   background-color: gainsboro;
   z-index: 1000;
@@ -236,7 +245,7 @@
 .desertMap{
   width: 48%;
   height: 48%;
-  background-image: url("../../public/desert.png");
+  background-image: url("../../public/assets/desert.png");
   background-size: cover;
   background-color: aqua;
   z-index: 1000;

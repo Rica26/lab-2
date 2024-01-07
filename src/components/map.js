@@ -1,6 +1,6 @@
 import styles from "@/styles/Home.module.css";
 
-const Map = ({ setEnvironment, setIsMonster, setEnemyDestroyed }) => {
+const Map = ({ setEnvironment, setIsMonster }) => {
   const setEnvironmentHandler = (environment) => {
       setEnvironment(environment);
     if (environment === "ice") {

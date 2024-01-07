@@ -1,6 +1,6 @@
-import skull from "../../public/skull.png";
+import skull from "../../public/assets/skull.png";
 import Image from "next/image";
-import monster from "../../public/monster.png";
+import monster from "../../public/assets/monster.png";
 
 const Enemy = ({ isMonster, isDestroyed }) => {
   if (isMonster && isDestroyed.isMonsterDestroyed) return null;
@@ -16,8 +16,8 @@ const Enemy = ({ isMonster, isDestroyed }) => {
       style={{
         zIndex: 1000,
         position: "absolute",
-        left: 700,
-        top: 300,
+        left: 400,
+        top: 400
       }}
     />
   );
