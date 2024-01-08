@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GiBoltSpellCast as BoltSpell } from "react-icons/gi";
 import { GiFireSpellCast as FireSpell } from "react-icons/gi";
 import { GiIceSpellCast as IceSpell } from "react-icons/gi";

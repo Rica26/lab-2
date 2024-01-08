@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import wizard from "../../public/assets/wizard.png";
 
 const Player = () => {
-  const [position, setPosition] = useState({ x: 300, y: 300 });
+  const position={x:300,y:300}
 
-  //
 
   return (
     <Image

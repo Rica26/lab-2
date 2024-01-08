@@ -16,8 +16,8 @@ const Enemy = ({ isMonster, isDestroyed }) => {
       style={{
         zIndex: 1000,
         position: "absolute",
-        left: 400,
-        top: 400
+        left: 700,
+        top: 300
       }}
     />
   );

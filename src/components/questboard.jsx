@@ -1,6 +1,6 @@
 import styles from "@/styles/Home.module.css";
 
-const QuestBoard = ({isEnemyDestroyed}) => {
+const QuestBoard = ({ isEnemyDestroyed }) => {
   return (
     <div className={styles.questBoardContainer}>
       <span style={{ position: "absolute", left: 80, top: 550, fontSize: 15, textAlign: "center", color: "black" }}>
@@ -17,11 +17,17 @@ const QuestBoard = ({isEnemyDestroyed}) => {
           lineHeight: "2.5",
           fontWeight: "bold",
           display: "flex",
-          flexDirection: "column"
+          flexDirection: "column",
         }}
       >
-        <span style={{textDecoration:isEnemyDestroyed.isSkullDestroyed===true  ? "line-through" : "none" }}>Visita o Hell e derrota a caveira</span>
-        <span style={{textDecoration:isEnemyDestroyed.isMonsterDestroyed===true  ? "line-through" : "none"}}>Visita o Ice e derrota o monstro</span>
+        <span style={{ textDecoration: isEnemyDestroyed.isSkullDestroyed === true ? "line-through" : "none" }}>
+          Visita o Hell e derrota a caveira
+        </span>
+        <span style={{ textDecoration: isEnemyDestroyed.isMonsterDestroyed === true ? "line-through" : "none" }}>
+          Visita o Ice e derrota o monstro
+        </span>
+        {/* {!isEnemyDestroyed.isSkullDestroyed && <span>Visita o Hell e derrota a caveira</span>}
+        {!isEnemyDestroyed.isMonsterDestroyed && <span>Visita o Ice e derrota o monstro</span>} */}
       </div>
     </div>
   );
