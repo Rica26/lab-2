@@ -8,7 +8,7 @@ const Spells = ({ onEnemyDestroy }) => {
   const [isFlickering, setFlickering] = useState(false);
   const [spell, setSpell] = useState("yellow");
 
-  const spellHandler = (spell) => {
+  const spellHandler = () => {
     if (spell === "yellow") {
       setFlickering(true);
       setSpell("yellow");
@@ -34,28 +34,6 @@ const Spells = ({ onEnemyDestroy }) => {
       }, 100);
     }
   };
-
-  // const handleKeyDown = (event) => {
-  //   if (event.key === "z") {
-  //     spellHandler("yellow");
-  //     onEnemyDestroy();
-  //   }
-  //   if (event.key === "x") {
-  //     spellHandler("red");
-  //     onEnemyDestroy();
-  //   }
-  //   if (event.key === "c") {
-  //     spellHandler("blue");
-  //     onEnemyDestroy();
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener("keydown", handleKeyDown);
-  //   return () => {
-  //     document.removeEventListener("keydown", handleKeyDown);
-  //   };
-  // }, []);
 
   return (
     <div className={`${styles.spells}`}>
